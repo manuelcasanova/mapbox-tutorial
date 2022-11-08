@@ -22,5 +22,14 @@ function setupMap(center) {
 
   const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-left');
+
+const directions = new MapboxDirections({
+  accessToken: mapboxgl.accessToken,
+  unit: 'metric',
+  profile: 'mapbox/cycling'
+});
+
+
+map.addControl(directions, 'top-left');
 }
 
